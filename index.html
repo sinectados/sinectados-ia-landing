@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sinectados.IA - Sitio en construcción">
+    <title>Sinectados.IA - En Construcción</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            padding: 2rem;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo .ia {
+            color: #fbbf24;
+        }
+
+        .construction-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .message {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            opacity: 0.85;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .contact-item a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 2rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .environment-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(245, 158, 11, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .environment-badge.qa {
+            display: block;
+            background: rgba(245, 158, 11, 0.9);
+        }
+
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.7;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.25rem;
+            }
+
+            .construction-icon {
+                font-size: 4rem;
+            }
+
+            .message {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .construction-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Environment Badge (visible en QA) -->
+    <div class="environment-badge" id="envBadge">
+        Ambiente QA
+    </div>
+
+    <div class="container">
+        <div class="logo">
+            Sinectados<span class="ia">.IA</span>
+        </div>
+
+        <div class="construction-icon">
+            🚧
+        </div>
+
+        <h1>En Construcción</h1>
+
+        <p class="subtitle">Pronto estaremos en línea</p>
+
+        <div class="loader"></div>
+
+        <p class="message">
+            Estamos trabajando arduamente para traerte una experiencia increíble.<br>
+            Nuestra plataforma de Inteligencia Artificial estará disponible muy pronto.
+        </p>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                📧 Contacto: <a href="mailto:contacto@sinectados.ia">contacto@sinectados.ia</a>
+            </div>
+            <div class="contact-item">
+                📍 Santiago, Chile
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Sinectados.IA - Todos los derechos reservados</p>
+        </div>
+    </div>
+
+    <script>
+        // Detectar ambiente y mostrar badge si es QA
+        const hostname = window.location.hostname;
+        const envBadge = document.getElementById('envBadge');
+
+        if (hostname.includes('qa.') || hostname.includes('localhost')) {
+            envBadge.classList.add('qa');
+            console.log('Ambiente QA detectado');
+        }
+
+        // Log de carga
+        console.log('Sinectados.IA - Sitio en construcción');
+        console.log('Dominio:', hostname);
+        console.log('Fecha:', new Date().toLocaleString('es-CL'));
+
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            if (window.performance && window.performance.timing) {
+                const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
+                console.log(`Tiempo de carga: ${loadTime}ms`);
+            }
+        });
+    </script>
+</body>
+</html>
